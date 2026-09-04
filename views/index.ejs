@@ -11,77 +11,348 @@
 
 <body>
 
-    <header>
-        <div class="logo">
-    <a href="/">COFFEE SHOP</a>
-</div>
+<header>
+    <div class="logo">
+        <a href="/">COFFEE SHOP</a>
+    </div>
 
-        <nav>
-    <a href="/">Trang chủ</a>
-    <a href="/products">Hạt cà phê</a>
-    <a href="#">Thương hiệu</a>
-    <a href="/blog">Câu chuyện</a>
-    <a href="/contact">Liên hệ</a>
+    <nav>
+        <a href="/">Trang chủ</a>
+        <a href="/products">Hạt cà phê</a>
+        <a href="#">Thương hiệu</a>
+        <a href="/blog">Câu chuyện</a>
+        <a href="/contact">Liên hệ</a>
 
-    <% if (user) { %>
+        <% if (user) { %>
+            <span class="user-name">
+                👤 <%= user.name %>
+            </span>
 
-        <span class="user-name">
-            👤 <%= user.name %>
-        </span>
+            <a href="/logout">
+                Đăng xuất
+            </a>
+        <% } else { %>
+            <a href="/register">
+                Đăng ký
+            </a>
 
-        <a href="/logout">
-            Đăng xuất
+            <a href="/login">
+                Đăng nhập
+            </a>
+        <% } %>
+
+        <a href="/cart">
+            🛒 Giỏ hàng
         </a>
+    </nav>
+</header>
 
-    <% } else { %>
 
-        <a href="/register">
-            Đăng ký
+<main>
+
+    <!-- BANNER -->
+    <section class="hero">
+        <div class="hero-content">
+            <p>COFFEE SHOP</p>
+
+            <h1>
+                CÀ PHÊ NGON<br>
+                BẮT ĐẦU TỪ<br>
+                HẠT CÀ PHÊ TỐT
+            </h1>
+
+            <a href="/products" class="btn">
+                KHÁM PHÁ SẢN PHẨM
+            </a>
+        </div>
+    </section>
+
+
+    <!-- GIỚI THIỆU -->
+    <section class="intro">
+        <p class="section-small-title">
+            HẠT CÀ PHÊ
+        </p>
+
+        <h2>
+            KHÁM PHÁ HƯƠNG VỊ<br>
+            CÀ PHÊ VIỆT NAM
+        </h2>
+
+        <p class="description">
+            Những hạt cà phê được lựa chọn kỹ lưỡng từ các vùng trồng
+            nổi tiếng tại Việt Nam, mang đến trải nghiệm cà phê
+            thơm ngon và đậm đà mỗi ngày.
+        </p>
+
+        <a href="/products" class="text-link">
+            XEM TẤT CẢ SẢN PHẨM →
         </a>
+    </section>
 
-        <a href="/login">
-            Đăng nhập
-        </a>
 
-    <% } %>
+    <!-- SẢN PHẨM NỔI BẬT -->
+    <section class="home-products">
 
-    <a href="/cart">
-        🛒 Giỏ hàng
-    </a>
-</nav>
-    </header>
+        <div class="section-heading">
+            <p>SẢN PHẨM NỔI BẬT</p>
+            <h2>HẠT CÀ PHÊ ĐƯỢC YÊU THÍCH</h2>
+        </div>
 
-    <main>
-        <section class="hero">
-            <div class="hero-content">
-                <p>COFFEE SHOP</p>
+        <div class="home-product-grid">
 
-                <h1>
-                    CÀ PHÊ NGON<br>
-                    BẮT ĐẦU TỪ<br>
-                    HẠT CÀ PHÊ TỐT
-                </h1>
+            <div class="home-product-card">
+                <img src="/images/cafe1.jpg" alt="Arabica Cầu Đất">
 
-                <a href="/products" class="btn">
-                    KHÁM PHÁ SẢN PHẨM
+                <h3>Arabica Cầu Đất</h3>
+
+                <p>
+                    Hương thơm nhẹ, vị chua thanh,
+                    hậu vị ngọt tự nhiên.
+                </p>
+
+                <strong>185.000đ</strong>
+
+                <a href="/product/1">
+                    XEM CHI TIẾT
                 </a>
             </div>
-        </section>
 
-        <section class="intro">
-            <p>HẠT CÀ PHÊ</p>
+
+            <div class="home-product-card">
+                <img src="/images/cafe2.jpg" alt="Robusta Buôn Ma Thuột">
+
+                <h3>Robusta Buôn Ma Thuột</h3>
+
+                <p>
+                    Vị đậm mạnh, caffeine cao,
+                    thích hợp pha cà phê sữa.
+                </p>
+
+                <strong>145.000đ</strong>
+
+                <a href="/product/2">
+                    XEM CHI TIẾT
+                </a>
+            </div>
+
+
+            <div class="home-product-card">
+                <img src="/images/cafe3.jpg" alt="Blend Espresso">
+
+                <h3>Blend Espresso</h3>
+
+                <p>
+                    Sự kết hợp cân bằng giữa
+                    Arabica và Robusta.
+                </p>
+
+                <strong>165.000đ</strong>
+
+                <a href="/product/3">
+                    XEM CHI TIẾT
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- CÂU CHUYỆN THƯƠNG HIỆU -->
+    <section class="home-story">
+
+        <div class="story-content">
+
+            <p class="section-small-title">
+                COFFEE STORIES
+            </p>
 
             <h2>
-                KHÁM PHÁ HƯƠNG VỊ<br>
-                CÀ PHÊ VIỆT NAM
+                NHỮNG CÂU CHUYỆN<br>
+                ĐẰNG SAU MỖI TÁCH CÀ PHÊ
             </h2>
 
-            <p class="description">
-                Những hạt cà phê được lựa chọn kỹ lưỡng,
-                mang đến trải nghiệm cà phê thơm ngon mỗi ngày.
+            <p>
+                Khám phá hành trình phát triển của những thương hiệu
+                cà phê quen thuộc như Highlands Coffee,
+                Trung Nguyên và Thái Yên.
             </p>
-        </section>
-    </main>
+
+            <a href="/blog" class="btn">
+                KHÁM PHÁ CÂU CHUYỆN
+            </a>
+
+        </div>
+
+        <div class="story-image">
+            <img
+                src="/images/blog-thaiyen.jpg"
+                alt="Câu chuyện cà phê"
+            >
+        </div>
+
+    </section>
+
+
+    <!-- LÝ DO CHỌN -->
+    <section class="why-us">
+
+        <div class="section-heading">
+            <p>COFFEE SHOP</p>
+            <h2>VÌ SAO CHỌN CHÚNG TÔI?</h2>
+        </div>
+
+        <div class="why-grid">
+
+            <div class="why-item">
+                <div class="why-icon">☕</div>
+                <h3>Hạt cà phê chọn lọc</h3>
+                <p>
+                    Lựa chọn nguyên liệu kỹ lưỡng
+                    từ những vùng trồng cà phê nổi tiếng.
+                </p>
+            </div>
+
+            <div class="why-item">
+                <div class="why-icon">🔥</div>
+                <h3>Rang theo từng hương vị</h3>
+                <p>
+                    Nhiều mức rang khác nhau phù hợp
+                    với sở thích của từng khách hàng.
+                </p>
+            </div>
+
+            <div class="why-item">
+                <div class="why-icon">📦</div>
+                <h3>Giao hàng tiện lợi</h3>
+                <p>
+                    Đóng gói sản phẩm cẩn thận
+                    và giao đến tận tay khách hàng.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- THÔNG TIN GIỐNG PHẦN TRONG ẢNH -->
+    <section class="home-connect">
+
+        <div class="connect-row">
+
+            <div class="connect-text">
+                <h3>THAM GIA MẠNG XÃ HỘI CỦA COFFEE SHOP</h3>
+
+                <p>
+                    Cập nhật tin tức về cà phê,
+                    sản phẩm mới và những câu chuyện thú vị mỗi ngày.
+                </p>
+            </div>
+
+            <div class="social-links">
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">TikTok</a>
+                <a href="#">YouTube</a>
+            </div>
+
+        </div>
+
+
+        <div class="connect-row">
+
+            <div class="connect-text">
+                <h3>ĐẶT CÀ PHÊ TRỰC TUYẾN</h3>
+
+                <p>
+                    Chọn hạt cà phê yêu thích,
+                    thêm vào giỏ hàng và đặt hàng ngay trên website.
+                </p>
+            </div>
+
+            <div class="connect-action">
+                <a href="/products" class="outline-btn">
+                    MUA NGAY
+                </a>
+            </div>
+
+        </div>
+
+
+        <div class="connect-row">
+
+            <div class="connect-text">
+                <h3>CÁC ĐỐI TÁC GIAO HÀNG</h3>
+
+                <p>
+                    Dịch vụ giao hàng nhanh chóng
+                    và tiện lợi đến khách hàng.
+                </p>
+            </div>
+
+            <div class="delivery-partners">
+                <span>GrabFood</span>
+                <span>ShopeeFood</span>
+                <span>Green SM</span>
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer class="site-footer">
+
+    <div class="footer-top">
+
+        <div class="footer-brand">
+            <h3>COFFEE SHOP</h3>
+
+            <p>
+                Mang hương vị cà phê Việt
+                đến gần hơn với mọi người.
+            </p>
+        </div>
+
+
+        <div class="footer-info">
+            <h4>LIÊN HỆ</h4>
+
+            <p>Biên Hòa, Đồng Nai, Việt Nam</p>
+            <p>Điện thoại: 0900 000 000</p>
+            <p>Email: coffeeshop@gmail.com</p>
+        </div>
+
+
+        <div class="footer-links">
+            <h4>THÔNG TIN</h4>
+
+            <a href="/products">Sản phẩm</a>
+            <a href="/blog">Câu chuyện</a>
+            <a href="/contact">Liên hệ</a>
+            <a href="/cart">Giỏ hàng</a>
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <p>
+            Copyright © 2026 COFFEE SHOP
+        </p>
+
+        <div>
+            <a href="#">Chính sách bảo mật</a>
+            <a href="#">Điều khoản dịch vụ</a>
+        </div>
+
+    </div>
+
+</footer>
 
 </body>
 </html>
