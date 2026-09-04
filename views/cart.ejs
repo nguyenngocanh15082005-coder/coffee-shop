@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Giỏ hàng</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+    <a href="/">COFFEE SHOP</a>
+</div>
+
+    <nav>
+    <a href="/">Trang chủ</a>
+    <a href="/products">Hạt cà phê</a>
+    <a href="#">Thương hiệu</a>
+    <a href="/blog">Câu chuyện</a>
+    <a href="/contact">Liên hệ</a>
+
+    <% if (user) { %>
+
+        <span class="user-name">
+            👤 <%= user.name %>
+        </span>
+
+        <a href="/logout">
+            Đăng xuất
+        </a>
+
+    <% } else { %>
+
+        <a href="/register">
+            Đăng ký
+        </a>
+
+        <a href="/login">
+            Đăng nhập
+        </a>
+
+    <% } %>
+
+    <a href="/cart">
+        🛒 Giỏ hàng
+    </a>
+</nav>
+</header>
+
+
+<section class="cart-page">
+
+    <h1>GIỎ HÀNG</h1>
+
+    <% if (cart.length === 0) { %>
+
+        <div class="empty-cart">
+
+            <p>Giỏ hàng của bạn đang trống.</p>
+
+            <a href="/products" class="btn-shop">
+                TIẾP TỤC MUA HÀNG
+            </a>
+
+        </div>
+
+    <% } else { %>
+
+        <div class="cart-container">
+
+            <div class="cart-items">
+
+                <% cart.forEach(item => { %>
+
+                    <div class="cart-item">
+
+                        <img
+                            src="<%= item.image %>"
+                            alt="<%= item.name %>"
+                        >
+
+                        <div class="cart-info">
+
+                            <h3><%= item.name %></h3>
+
+                            <p>
+                                <%= item.price.toLocaleString("vi-VN") %>đ
+                            </p>
+
+                        </div>
+
+
+                        <div class="cart-quantity">
+
+                            <form
+                                action="/cart/decrease/<%= item.id %>"
+                                method="POST"
+                            >
+                                <button type="submit">−</button>
+                            </form>
+
+                            <span>
+                                <%= item.quantity %>
+                            </span>
+
+                            <form
+                                action="/cart/increase/<%= item.id %>"
+                                method="POST"
+                            >
+                                <button type="submit">+</button>
+                            </form>
+
+                        </div>
+
+
+                        <strong>
+                            <%= (item.price * item.quantity)
+                                .toLocaleString("vi-VN") %>đ
+                        </strong>
+
+
+                        <form
+                            action="/cart/remove/<%= item.id %>"
+                            method="POST"
+                        >
+
+                            <button
+                                type="submit"
+                                class="remove-btn"
+                            >
+                                Xóa
+                            </button>
+
+                        </form>
+
+                    </div>
+
+                <% }); %>
+
+            </div>
+
+
+            <div class="cart-summary">
+
+                <h2>TỔNG ĐƠN HÀNG</h2>
+
+                <div class="summary-row">
+
+                    <span>Tổng tiền</span>
+
+                    <strong>
+                        <%= total.toLocaleString("vi-VN") %>đ
+                    </strong>
+
+                </div>
+
+                <button class="checkout-btn">
+                    THANH TOÁN
+                </button>
+
+            </div>
+
+        </div>
+
+    <% } %>
+
+</section>
+
+</body>
+</html>

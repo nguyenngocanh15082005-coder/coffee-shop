@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Liên hệ</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+    <a href="/">COFFEE SHOP</a>
+</div>
+
+    <nav>
+        <a href="/">Trang chủ</a>
+        <a href="/products">Hạt cà phê</a>
+        <a href="#">Thương hiệu</a>
+        <a href="/blog">Câu chuyện</a>
+        <a href="/contact">Liên hệ</a>
+
+        <% if (user) { %>
+
+            <span class="user-name">
+                👤 <%= user.name %>
+            </span>
+
+            <a href="/logout">
+                Đăng xuất
+            </a>
+
+        <% } else { %>
+
+            <a href="/register">
+                Đăng ký
+            </a>
+
+            <a href="/login">
+                Đăng nhập
+            </a>
+
+        <% } %>
+
+        <a href="/cart">
+            🛒 Giỏ hàng
+        </a>
+    </nav>
+
+</header>
+
+
+<section class="contact-page">
+
+    <div class="contact-heading">
+
+        <p>COFFEE SHOP</p>
+
+        <h1>
+            LIÊN HỆ VỚI CHÚNG TÔI
+        </h1>
+
+        <p class="contact-description">
+            Nếu bạn cần tư vấn về hạt cà phê, đơn hàng
+            hoặc sản phẩm, hãy liên hệ với chúng tôi.
+        </p>
+
+    </div>
+
+
+    <div class="contact-container">
+
+        <!-- THÔNG TIN -->
+        <div class="contact-info">
+
+            <h2>THÔNG TIN CỬA HÀNG</h2>
+
+
+            <div class="contact-item">
+
+                <h3>Địa chỉ</h3>
+
+                <p>
+                    Biên Hòa, Đồng Nai, Việt Nam
+                </p>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <h3>Điện thoại</h3>
+
+                <p>
+                    0123 456 789
+                </p>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <h3>Email</h3>
+
+                <p>
+                    coffeeshop@gmail.com
+                </p>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <h3>Giờ mở cửa</h3>
+
+                <p>
+                    Thứ 2 - Chủ nhật
+                </p>
+
+                <p>
+                    07:00 - 22:00
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- FORM -->
+        <div class="contact-form">
+
+            <h2>GỬI TIN NHẮN</h2>
+
+            <form>
+
+                <label>Họ và tên</label>
+
+                <input
+                    type="text"
+                    placeholder="Nhập họ và tên"
+                >
+
+
+                <label>Email</label>
+
+                <input
+                    type="email"
+                    placeholder="example@gmail.com"
+                >
+
+
+                <label>Số điện thoại</label>
+
+                <input
+                    type="tel"
+                    placeholder="0123456789"
+                >
+
+
+                <label>Nội dung</label>
+
+                <textarea
+                    rows="6"
+                    placeholder="Nhập nội dung cần liên hệ..."
+                ></textarea>
+
+
+                <button type="submit">
+                    GỬI LIÊN HỆ
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- GOOGLE MAP -->
+    <div class="map-section">
+
+        <div class="map-title">
+
+            <p>VỊ TRÍ CỬA HÀNG</p>
+
+            <h2>
+                TÌM CHÚNG TÔI TRÊN GOOGLE MAPS
+            </h2>
+
+        </div>
+
+
+        <iframe
+            src="https://www.google.com/maps?q=Bien+Hoa+Dong+Nai&output=embed"
+            width="100%"
+            height="500"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+
+    </div>
+
+</section>
+
+</body>
+
+</html>

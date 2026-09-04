@@ -1,0 +1,18 @@
+{
+  "name": "coffee-shop",
+  "version": "1.0.0",
+  "description": "Website bán hạt cà phê bằng Node.js, Express và EJS",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "node --watch app.js"
+  },
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "ejs": "^6.0.1",
+    "express": "^5.2.1",
+    "express-session": "^1.19.0"
+  }
+}

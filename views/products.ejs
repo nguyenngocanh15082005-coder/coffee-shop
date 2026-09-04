@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hạt cà phê</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+    <a href="/">COFFEE SHOP</a>
+</div>
+
+    <nav>
+    <a href="/">Trang chủ</a>
+    <a href="/products">Hạt cà phê</a>
+    <a href="#">Thương hiệu</a>
+    <a href="/blog">Câu chuyện</a>
+    <a href="/contact">Liên hệ</a>
+
+    <% if (user) { %>
+
+        <span class="user-name">
+            👤 <%= user.name %>
+        </span>
+
+        <a href="/logout">
+            Đăng xuất
+        </a>
+
+    <% } else { %>
+
+        <a href="/register">
+            Đăng ký
+        </a>
+
+        <a href="/login">
+            Đăng nhập
+        </a>
+
+    <% } %>
+
+    <a href="/cart">
+        🛒 Giỏ hàng
+    </a>
+</nav>
+
+</header>
+
+
+<section class="products-page">
+
+    <div class="products-title">
+        <p>COFFEE SHOP</p>
+        <h1>HẠT CÀ PHÊ</h1>
+    </div>
+
+
+    <div class="product-grid">
+
+
+        <!-- SẢN PHẨM 1 -->
+        <div class="product-card">
+
+            <a href="/product/1">
+                <div class="product-image">
+                    <img src="/images/cafe1.jpg" alt="Arabica Cầu Đất">
+                </div>
+            </a>
+
+            <h3>
+                <a href="/product/1">
+                    Arabica Cầu Đất
+                </a>
+            </h3>
+
+            <p class="product-info">
+                Rang vừa • 250g
+            </p>
+
+            <p class="price">
+                185.000đ
+            </p>
+
+            <button>THÊM VÀO GIỎ</button>
+
+        </div>
+
+
+        <!-- SẢN PHẨM 2 -->
+        <div class="product-card">
+
+            <a href="/product/2">
+                <div class="product-image">
+                    <img src="/images/cafe2.jpg" alt="Robusta Buôn Ma Thuột">
+                </div>
+            </a>
+
+            <h3>
+                <a href="/product/2">
+                    Robusta Buôn Ma Thuột
+                </a>
+            </h3>
+
+            <p class="product-info">
+                Rang đậm • 250g
+            </p>
+
+            <p class="price">
+                145.000đ
+            </p>
+
+            <button>THÊM VÀO GIỎ</button>
+
+        </div>
+
+
+        <!-- SẢN PHẨM 3 -->
+        <div class="product-card">
+
+            <a href="/product/3">
+                <div class="product-image">
+                    <img src="/images/cafe3.jpg" alt="Blend Espresso">
+                </div>
+            </a>
+
+            <h3>
+                <a href="/product/3">
+                    Blend Espresso
+                </a>
+            </h3>
+
+            <p class="product-info">
+                Arabica + Robusta • 250g
+            </p>
+
+            <p class="price">
+                165.000đ
+            </p>
+
+            <button>THÊM VÀO GIỎ</button>
+
+        </div>
+
+
+        <!-- SẢN PHẨM 4 -->
+        <div class="product-card">
+
+            <a href="/product/4">
+                <div class="product-image">
+                    <img src="/images/cafe4.jpg" alt="Arabica Đà Lạt">
+                </div>
+            </a>
+
+            <h3>
+                <a href="/product/4">
+                    Arabica Đà Lạt
+                </a>
+            </h3>
+
+            <p class="product-info">
+                Rang sáng • 250g
+            </p>
+
+            <p class="price">
+                195.000đ
+            </p>
+
+            <button>THÊM VÀO GIỎ</button>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+</body>
+</html>

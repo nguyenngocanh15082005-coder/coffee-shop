@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Coffee Shop</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+    <a href="/">COFFEE SHOP</a>
+</div>
+
+        <nav>
+    <a href="/">Trang chủ</a>
+    <a href="/products">Hạt cà phê</a>
+    <a href="#">Thương hiệu</a>
+    <a href="/blog">Câu chuyện</a>
+    <a href="/contact">Liên hệ</a>
+
+    <% if (user) { %>
+
+        <span class="user-name">
+            👤 <%= user.name %>
+        </span>
+
+        <a href="/logout">
+            Đăng xuất
+        </a>
+
+    <% } else { %>
+
+        <a href="/register">
+            Đăng ký
+        </a>
+
+        <a href="/login">
+            Đăng nhập
+        </a>
+
+    <% } %>
+
+    <a href="/cart">
+        🛒 Giỏ hàng
+    </a>
+</nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <p>COFFEE SHOP</p>
+
+                <h1>
+                    CÀ PHÊ NGON<br>
+                    BẮT ĐẦU TỪ<br>
+                    HẠT CÀ PHÊ TỐT
+                </h1>
+
+                <a href="/products" class="btn">
+                    KHÁM PHÁ SẢN PHẨM
+                </a>
+            </div>
+        </section>
+
+        <section class="intro">
+            <p>HẠT CÀ PHÊ</p>
+
+            <h2>
+                KHÁM PHÁ HƯƠNG VỊ<br>
+                CÀ PHÊ VIỆT NAM
+            </h2>
+
+            <p class="description">
+                Những hạt cà phê được lựa chọn kỹ lưỡng,
+                mang đến trải nghiệm cà phê thơm ngon mỗi ngày.
+            </p>
+        </section>
+    </main>
+
+</body>
+</html>
